@@ -1,0 +1,109 @@
+C++ Program to store GPA of n number of students and display it where n is the
+number of students entered by user.
+#include <iostream>
+using namespace std;
+int main()
+{
+int num;
+cout << "Enter total number of students: ";
+cin >> num;
+float* ptr;
+
+// memory allocation of num number of floats
+ptr = new float[num];
+
+cout << "Enter GPA of students." << endl;
+for (int i = 0; i < num; ++i)
+{
+cout << "Student" << i + 1 << ": ";
+cin >> *(ptr + i);
+}
+
+cout << "\nDisplaying GPA of students." << endl;
+for (int i = 0; i < num; ++i) {
+cout << "Student" << i + 1 << " :" << *(ptr + i) << endl;
+}
+// ptr memory is released
+delete [] ptr;
+
+return 0;
+}
+
+
+
+time functions
+
+#include<iostream>
+#include<ctime>
+using namespace std;
+
+int main()
+{
+time_t now = time(0);
+tm *ltm = localtime(&now);
+cout<<"The current time is ";
+cout<<1+ltm->tm_hour<<":";
+cout<<1+ltm->tm_min<<":";
+cout<<1+ltm->tm_sec<<endl;
+return 0;
+}
+
+
+
+recursive function ---->factorial
+
+factorial calculator
+#include <iostream>
+using namespace std;
+
+long factorial (long a)
+{
+if (a > 1)
+return (a * factorial (a-1));
+else
+return 1;
+}
+
+int main ()
+{
+long number = 9;
+cout << number << "! = " << factorial (number);
+return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+int n_to_xth_power(int n, int x)
+{ if (x == 0)
+return 1;
+else
+return n * n_to_xth_power(n, x-1);
+
+}
+int main ()
+{
+int n = 2, x = 1;
+while (x <= 10) {
+cout << n << "**" << x << " = " << n_to_xth_power(n,x) << endl;
+x++;
+}
+return 0;
+}
+
+datev time functions
+
+#include<iostream>
+#include<ctime>
+using namespace std;
+
+int main()
+{
+time_t now = time(0);
+tm *ltm = localtime(&now);
+cout<<"The current time is ";
+cout<<1+ltm->tm_hour<<":";
+cout<<1+ltm->tm_min<<":";
+cout<<1+ltm->tm_sec<<endl;
+return 0;
+}
